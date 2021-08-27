@@ -1,0 +1,189 @@
+{
+  "id": "48357252-5887-4334-9e30-a09b5f4309ff",
+  "version": "2.0",
+  "name": "Selenium IDE/Login and Registration form",
+  "url": "https://www.marica.bg/",
+  "tests": [{
+    "id": "850a201d-2dfa-4fde-b4d3-a95a26bbca44",
+    "name": "Unsuccessful login - correct email and wrong password.",
+    "commands": [{
+      "id": "88cba493-67c7-415d-911b-95414396a283",
+      "comment": "Open https://www.marica.bg/",
+      "command": "open",
+      "target": "https://www.marica.bg/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8c4b872b-54da-41ea-a79d-4192473e192a",
+      "comment": "Click on the Profile (\"Профил\") button",
+      "command": "click",
+      "target": "css=.btn:nth-child(2) > span",
+      "targets": [
+        ["css=.btn:nth-child(2) > span", "css:finder"],
+        ["xpath=//a[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "32a143fa-219c-4c32-a79c-ebea1b25acb6",
+      "comment": "Type in a registered email address",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "alexanderangelov8@gmail.com"
+    }, {
+      "id": "ef635211-134d-493c-b7cf-27dd8a304032",
+      "comment": "Type in a wrong password (\"Парола\")",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "1111111111111"
+    }, {
+      "id": "06966b42-eeb5-4b30-844c-026b4de1e398",
+      "comment": "Click on the Sign In (\"Вход\") button",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Вход')]",
+      "targets": [
+        ["css=.primary-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Вход')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7b706ea-7c3d-4901-ac01-853ccb8ffdfc",
+      "comment": "Observe the message These credentials do not match our records. (\"Тези идентификационни данни не съвпадат с нашите записи.\")",
+      "command": "assertElementPresent",
+      "target": "xpath=//*[contains(text(),'Тези идентификационни данни не съвпадат с нашите записи.')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "9c41089f-1fb2-4342-a5ba-d8582d8f1f87",
+    "name": "Unsuccessful registration - password is less than 8 characters. ",
+    "commands": [{
+      "id": "67c1b6dc-e4ce-422b-9504-dc23f2de8668",
+      "comment": "Open https://www.marica.bg/",
+      "command": "open",
+      "target": "https://www.marica.bg/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3157fe07-87da-451b-abb1-67e08908395c",
+      "comment": "Click on the Profile (\"Профил\") button",
+      "command": "click",
+      "target": "css=.btn:nth-child(2) > span",
+      "targets": [
+        ["css=.btn:nth-child(2) > span", "css:finder"],
+        ["xpath=//a[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6e7b2aa-f03a-42f3-9975-a30429304dc5",
+      "comment": "Click on Register (\"Регистрирай се\")",
+      "command": "click",
+      "target": "linkText=Регистрирай се",
+      "targets": [
+        ["linkText=Регистрирай се", "linkText"],
+        ["css=.reg", "css:finder"],
+        ["xpath=//a[contains(text(),'Регистрирай се')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/register')]", "xpath:href"],
+        ["xpath=//div/div/div/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Регистрирай се')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0874328-5c8b-4b26-99fc-ece45a5dedfc",
+      "comment": "Тype in Username (\"Потребителско име\")",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["name=name", "name"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "TestName"
+    }, {
+      "id": "e7720ff3-73c2-4ef6-a4f2-abfdfd34b2f9",
+      "comment": "Type in an email address",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "testmail@test.com"
+    }, {
+      "id": "573af9b0-7bdd-4f6f-b13e-f1e499c5a009",
+      "comment": "Type in a password that consists of less than 8 characters",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "11111"
+    }, {
+      "id": "760f46e7-fe76-4e32-93b8-3a45ca990932",
+      "comment": "Type in the same password from step 7",
+      "command": "type",
+      "target": "id=password-confirm",
+      "targets": [
+        ["id=password-confirm", "id"],
+        ["name=password_confirmation", "name"],
+        ["css=#password-confirm", "css:finder"],
+        ["xpath=//input[@id='password-confirm']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "11111"
+    }, {
+      "id": "5cd40461-a2bc-43d3-8880-9c1a793b3392",
+      "comment": "Click on Register me (\"Регистрирай ме\")",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Регистрирай ме')]",
+      "targets": [
+        ["css=.primary-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Регистрирай ме')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee9b46b9-093c-48f3-84b7-0b8784ce46d6",
+      "comment": "Observe the message The password must be at least 8 characters.",
+      "command": "assertElementPresent",
+      "target": "xpath=//strong[contains(.,'The password must be at least 8 characters.')]",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "741da1cd-d56f-4874-9253-14e61bf67bce",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.marica.bg/"],
+  "plugins": []
+}
